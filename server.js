@@ -7,6 +7,7 @@ const app = express();
 app.use(cors());
 
 const server = http.createServer(app);
+const port = process.env.PORT || 5000;
 
 const io = new Server(server, {
     cors: {
@@ -38,7 +39,7 @@ io.on('connection', (socket) => {
     })
 })
 
-server.listen(4000, () => {
-    console.log('Server is running on port 4000');
+server.listen(port, () => {
+    console.log('Server is running on port :',port);
 
 });
