@@ -15,6 +15,10 @@ const io = new Server(server, {
     },
 });
 
+app.get('/', (req, res) => {
+    res.send('<h1>Socket.IO Server is running!</h1>');
+});
+
 io.on('connection', (socket) => {
     console.log(`A user connected:${socket.id}`)
 
